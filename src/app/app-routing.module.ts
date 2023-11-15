@@ -20,9 +20,14 @@ const routes: Routes = [
     children: [
       {
         path: '', component: UserAdminComponent,
-        
+      },
+      {
+        path: '', component: GenericoComponent,
       }
     ]
+  },
+  {
+    path: 'logout', redirectTo:'/login', pathMatch:'full'
   }
 
 ];

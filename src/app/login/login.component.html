@@ -1,34 +1,36 @@
 <div class="container">
-    <form (ngSubmit)="login()" [formGroup]="loginForm">
-        <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">Email address</label>
-            <input type="text"
-            formControlName="email"
-            class="form-control" id="exampleFormControlInput1">
-            <div *ngIf="loginForm.get('email')?.touched
-                                    && loginForm.get('email')?.errors?.['required']" class="alert alert-danger mt-2"
-                role="alert">
-                El usuario es requerido
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="card-title text-center mb-4">Inicio de Sesión</h2>
+                    <form (ngSubmit)="login()" [formGroup]="loginForm">
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Correo Electrónico</label>
+                            <input type="text" formControlName="email" class="form-control" id="email">
+                            <div *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.errors?.['required']"
+                                class="alert alert-danger mt-2" role="alert">
+                                El correo electrónico es requerido
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Contraseña</label>
+                            <input type="password" formControlName="password" class="form-control" id="password">
+                            <div *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.errors?.['required']"
+                                class="alert alert-danger mt-2" role="alert">
+                                La contraseña es requerida
+                            </div>
+                            <div *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.errors?.['minlength']"
+                                class="alert alert-danger mt-2" role="alert">
+                                La contraseña debe tener al menos 6 caracteres
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <button type="submit" class="btn btn-primary btn-block">Ingresar</button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
-        <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">Contraseña</label>
-            <input type="password"
-            formControlName="password"
-            class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-            <div *ngIf="loginForm.get('password')?.touched
-                                                && loginForm.get('password')?.errors?.['required']"
-                class="alert alert-danger mt-2" role="alert">
-                La contraseña es requerida
-            </div>
-            <div *ngIf="loginForm.get('password')?.touched
-                                                            && loginForm.get('password')?.errors?.['minlength']"
-                class="alert alert-danger mt-2" role="alert">
-                Minimo 6 caracteres para el password
-            </div>
-        </div>
-        <div class="mb-3">
-            <button type="submit" class="btn btn-primary">Ingresar</button>
-        </div>
-    </form>
+    </div>
 </div>

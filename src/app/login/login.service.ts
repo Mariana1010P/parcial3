@@ -54,9 +54,4 @@ export class LoginService {
     return userString ? JSON.parse(userString) : null;
   }
 
-  isLoggedIn(): boolean {
-    return this.getCurrentUser() !== null;
-  }
-  
-
 }
