@@ -6,6 +6,7 @@ import { GenericoComponent } from './dashboard/generico/generico.component';
 import { authGuard } from './auth/auth.guard';
 import { Utils } from './utils/utils';
 import { UserAdminComponent } from './dashboard/user-admin/user-admin.component';
+import { RestrictedComponent } from './restricted/restricted.component';
 
 const routes: Routes = [
 
@@ -21,10 +22,15 @@ const routes: Routes = [
       {
         path: '', component: UserAdminComponent,
       },
-      {
+      /* {
         path: '', component: GenericoComponent,
-      }
+        canMatch:[()=>Utils.isRole('cliente')]
+      }*/
+      
     ]
+  },
+  {
+    path: 'restricted', component:RestrictedComponent
   },
   {
     path: 'logout', redirectTo:'/login', pathMatch:'full'

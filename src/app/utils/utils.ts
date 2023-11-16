@@ -9,13 +9,15 @@ export class Utils {
     }
   
     static isRole(role: string): boolean {
-      const usuario = JSON.parse(sessionStorage.getItem('usuarios') || '{}');
+      const usuarioString = sessionStorage.getItem('usuarios');
       
-      if (usuario && usuario.role) {
-        return usuario.role.toLowerCase() === role.toLowerCase();
-      } else {
-        return false;
+      if (usuarioString) {
+        const usuario = JSON.parse(usuarioString);
+        return usuario && usuario.role && usuario.role.toLowerCase() === role.toLowerCase();
       }
+    
+      return false;
     }
+    
     
   }
