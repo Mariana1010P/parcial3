@@ -8,12 +8,14 @@ import { LoginModule } from './login/login.module';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { ProductComponent } from './product/product.component';
 import { RestrictedComponent } from './restricted/restricted.component';
+import { PromocionesComponent } from './promociones/promociones.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductComponent,
-    RestrictedComponent
+    RestrictedComponent,
+    PromocionesComponent
   ],
   imports: [
     BrowserModule,

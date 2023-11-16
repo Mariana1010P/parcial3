@@ -9,9 +9,12 @@ import { Product } from '../model/product';
 })
 export class ProductComponent {
   
-  product: Product[]=[]
+  products: Product[] = [];
 
-  constructor(private productService: ProductService){}
+  constructor(private productService: ProductService) {}
 
+  ngOnInit(): void {
+    this.products = this.productService.getAllProducts();
+  }
   
 }

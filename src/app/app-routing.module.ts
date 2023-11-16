@@ -4,9 +4,10 @@ import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard/dashboard.component';
 import { GenericoComponent } from './dashboard/generico/generico.component';
 import { authGuard } from './auth/auth.guard';
-import { Utils } from './utils/utils';
 import { UserAdminComponent } from './dashboard/user-admin/user-admin.component';
 import { RestrictedComponent } from './restricted/restricted.component';
+import { ProductComponent } from './product/product.component';
+import { PromocionesComponent } from './promociones/promociones.component';
 
 const routes: Routes = [
 
@@ -22,6 +23,12 @@ const routes: Routes = [
       {
         path: '', component: UserAdminComponent,
       },
+      {
+        path:'productos', component: ProductComponent
+      },
+      {
+        path:'promociones', component: PromocionesComponent
+      }
       /* {
         path: '', component: GenericoComponent,
         canMatch:[()=>Utils.isRole('cliente')]
